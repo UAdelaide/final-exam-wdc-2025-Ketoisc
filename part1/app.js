@@ -126,7 +126,7 @@ app.use('/users', usersRouter);
   // Route to return all dogs as JSON with size and owner's username
   app.get('/api/dogs', async (req, res) => {
     try {
-      const [books] = await db.execute('SELECT * FROM books');
+      const [books] = await db.execute('SELECT dog_name, size,  FROM books');
       res.json(books);
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch books' });
