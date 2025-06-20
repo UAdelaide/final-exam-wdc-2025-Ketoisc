@@ -141,6 +141,9 @@ let db;
 // Login
 app.post('/api/users/login', async (req, res) => {
     try {
+        if (!db) {
+            console.log("NO DATABASE");
+        }
       const { username, password } = req.body;
       const [rows] = await db.execute("SELECT role FROM Users WHERE username = ? AND password_hash = ?", [username, password]);
 
