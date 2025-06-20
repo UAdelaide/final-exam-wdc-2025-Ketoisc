@@ -15,3 +15,5 @@ To test your computer setup.
 8. If this worked, then congratulations you are ready to start the exam.
 
 
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
