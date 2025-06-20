@@ -83,7 +83,10 @@
               method: 'GET',
               credentials: 'include'
             });
-            if 
+            if (res.ok) {
+              const user = await res.json();
+              return user.user_id;
+            }
           }
         }
 
