@@ -101,14 +101,17 @@
           catch {
             this.error = 'Unable to make fetch request';
           }
-        }
+        },
 
         async getDogList() {
           try {
             const res = await fetch('/api/dogs');
             if (res.ok) {
-              this.dogs = await res.json()
+              this.dogs = await res.json();
             }
+          }
+          catch (err) {
+            this.error = err.message;
           }
         }
       }
