@@ -23,6 +23,8 @@ app.post('/api/users/login', async (req, res) => {
 
       if (rows.length > 0) {
         res.json(rows[0].role);
+      } else {
+        res.status(401).json('No user found');
       }
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch user details' });
