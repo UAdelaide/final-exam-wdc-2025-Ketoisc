@@ -30,7 +30,7 @@
               <strong>Location:</strong> {{ walk.location }}<br>
               <strong>Owner:</strong> {{ walk.owner_name }}
             </p>
-            <button type=button class="btn btn-outline-success" @click="applyToWalk(getCurrentUser())">Apply</button>
+            <button type=button class="btn btn-outline-success" @click="applyToWalk(walk.request_id)">Apply</button>
           </div>
         </div>
       </div>
@@ -89,8 +89,7 @@
             }
           }
           catch (err) {
-            console.error('error getting user id from session');
-            return null;
+            console.error("")
           }
         }
 
