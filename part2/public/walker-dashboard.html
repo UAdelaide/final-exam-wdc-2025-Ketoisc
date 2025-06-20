@@ -88,6 +88,10 @@
               return user.user_id;
             }
           }
+          catch (err) {
+            console.error('error getting user id from session');
+            return null;
+          }
         }
 
         async function applyToWalk(requestId) {
