@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
     // else there is a match, start session
     req.session.user = {
       username: username,
-      role: rows[0].role.role
+      role: rows[0].role
     };
     // return if they are owner or walker
     res.json({ message: 'Login successful', user: rows[0].role });
