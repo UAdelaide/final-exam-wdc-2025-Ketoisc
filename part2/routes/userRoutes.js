@@ -45,15 +45,16 @@ router.post('/login', async (req, res) => {
       WHERE username = ? AND password_hash = ?
     `, [username, password]);
 
-    if (rows.length === 0) {
+    if (rows.length === 0) { //if there are no matches, return error
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
+    // else there is a match, start session
     req.session.user = {
       username: username,
       role: rows[0].role.user
     };
-
+    // return if they are owner or walker
     res.json({ message: 'Login successful', user: rows[0].role });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
