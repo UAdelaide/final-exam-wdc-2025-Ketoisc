@@ -132,7 +132,7 @@ let db;
       var [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
       if (rows[0].count === 0) {
         await db.execute(`
-        INSERT INTO WalkRatings (request_id, requested_time, duration_minutes, location, status)
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
         VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'), ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'), ((SELECT dog_id FROM Dogs WHERE name = 'Kai'), '2025-06-11 09:30:00', 30, 'Happy Ave', 'open'), ((SELECT dog_id FROM Dogs WHERE name = 'Martin'), '2025-06-12 09:30:00', 30, 'Sad Ave', 'accepted'), ((SELECT dog_id FROM Dogs WHERE name = 'Kai'), '2025-06-16 09:30:00', 30, 'Avenue Ave', 'open');
         `);
       }
