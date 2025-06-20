@@ -36,6 +36,9 @@
                             const data = await response.json();
                             this.dogApi = data.message;
                         }
+                        else {
+                            counter++;
+                        }
                     }
                 }
             }
