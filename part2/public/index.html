@@ -121,14 +121,14 @@
                   const dogPhoto = await fetch('https://dog.ceo/api/breeds/image/random');
                   if (dogPhoto.ok) {
                     const photoURL = await dogPhoto.json();
-                    dog.photo = photoURL;
+                    currDog.photo = photoURL;
                   }
                   else {
-                    dog.photo = '';
+                    currDog.photo = '';
                   }
                 }
                 catch (err) {
-                  dog.photo = '';
+                  currDog.photo = '';
                 }
               }
               this.dogs = dogList;
