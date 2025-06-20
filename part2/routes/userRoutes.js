@@ -81,7 +81,7 @@ router.get('/ownedDogs', async (req, res) => {
   try {
     const userID = req.session.user.user_id;
 
-    const [rows] = await db.query(`SELECT name FROM Dogs WHERE owner_id = ?`, userID);
+    const [rows] = await db.query(`SELECT name, dog_id FROM Dogs WHERE owner_id = ?`, userID);
     res.json(rows);
   }
   catch (error) {
