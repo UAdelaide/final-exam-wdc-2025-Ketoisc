@@ -70,7 +70,7 @@ router.post('/logout', async (req, res) => {
       }
       res.clearCookie('connect.sid');
       res.json({ message: 'Logged out'});
-      
+      console.log("destroyed session");
     });
 });
 
