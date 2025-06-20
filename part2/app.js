@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-
+var mysql = require('mysql2/promise');
 const app = express();
 
 // Middleware
