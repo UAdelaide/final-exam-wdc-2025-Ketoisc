@@ -87,6 +87,9 @@
               const user = await res.json();
               return user.user_id;
             }
+            else {
+              return null;
+            }
           }
           catch (err) {
             console.error('error getting user id from session');
@@ -96,7 +99,9 @@
 
         async function applyToWalk(requestId) {
           var user_id = getCurrentUser();
-          if (user_id )
+          if (user_id != null) {
+            
+          }
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
