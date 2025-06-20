@@ -47,13 +47,13 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({
-                username: this.username,
+                username: this.username, //provide login details in the request body
                 password: this.password
               })
             });
 
-            const data = await response.json();
-            if (data === 'owner') {
+            const data = await response.json(); //wait for request to return
+            if (data === 'owner') { //if the user is found in database and is an owner
               // redirect to owner dashboard
               window.location.href = '/owner-dashboard.html';
             }
