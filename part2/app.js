@@ -20,6 +20,10 @@ app.post('/api/users/login', async (req, res) => {
     try {
       const { username, password } = req.body;
       const [role] = await db.execute("SELECT role FROM Users WHERE username = ? AND password_hash = ?", [username, password]);
+
+      if (rows.length > 0) {
+        
+      }
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch user details' });
     }
