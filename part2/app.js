@@ -18,6 +18,7 @@ app.use('/api/users', userRoutes);
 // Login
 app.post('/api/users/login', async (req, res) => {
     try {
+      const { username, password } = req.body;
       const [role] = await db.execute("SELECT role FROM Users WHERE ");
       res.json(books);
     } catch (err) {
