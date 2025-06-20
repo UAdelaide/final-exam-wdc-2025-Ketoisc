@@ -55,6 +55,25 @@
           }
         }
 
+        async function logout() {
+          try {
+            const res = await fetch('/api/users/logout', {
+              method: 'POST',
+              credentials: 'include',
+            });
+            if (res.ok) {
+              window.location.href = '/';
+            }
+            else {
+              console.error("couldnt make logout post request");
+            }
+
+          }
+          catch (err) {
+            error.value = 'Logout failed';
+          }
+        }
+
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
