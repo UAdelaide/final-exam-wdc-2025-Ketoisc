@@ -116,11 +116,12 @@
             const res = await fetch('/api/dogs'); //get dog list from database
             if (res.ok) {
               const dogList = await res.json();
-              // after we get dog list
+              // after we get dog list, loop through each dog object
               for (const currDog of dogList) {
                 try {
+                  // for every dog call the image api
                   const dogPhoto = await fetch('https://dog.ceo/api/breeds/image/random');
-                  if (dogPhoto.ok) {
+                  if (dogPhoto.ok) { //if successful response, set photo attribute to the URL
                     const photoURL = await dogPhoto.json();
                     currDog.photo = photoURL.message;
                   }
