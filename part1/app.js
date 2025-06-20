@@ -46,7 +46,7 @@ app.use('/users', usersRouter);
           title VARCHAR(255),
           author VARCHAR(255)
         )
-        CREATE TABLE Users (
+        CREATE TABLE IF NOT EXISTS Users (
             user_id INT AUTO_INCREMENT PRIMARY KEY,
             username VARCHAR(50) UNIQUE NOT NULL,
             email VARCHAR(100) UNIQUE NOT NULL,
@@ -55,7 +55,7 @@ app.use('/users', usersRouter);
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
 
-        CREATE TABLE Dogs (
+        CREATE TABLE IF NOT EXISTS Dogs (
             dog_id INT AUTO_INCREMENT PRIMARY KEY,
             owner_id INT NOT NULL,
             name VARCHAR(50) NOT NULL,
@@ -63,7 +63,7 @@ app.use('/users', usersRouter);
             FOREIGN KEY (owner_id) REFERENCES Users(user_id)
         );
 
-        CREATE TABLE WalkRequests (
+        CREATE TABLE IF NOT EXISTS WalkRequests (
             request_id INT AUTO_INCREMENT PRIMARY KEY,
             dog_id INT NOT NULL,
             requested_time DATETIME NOT NULL,
