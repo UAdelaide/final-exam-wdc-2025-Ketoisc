@@ -1,7 +1,6 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-var mysql = require('mysql2/promise');
 const session = require('express-session');
 const app = express();
 
@@ -23,8 +22,6 @@ const userRoutes = require('./routes/userRoutes');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-
-let db;
 
 
 
