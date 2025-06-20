@@ -98,7 +98,13 @@
               method: 'POST',
               credentials: 'include',
             });
-            window.location.href = '/';
+            if (res.ok) {
+              window.location.href = '/';
+            }
+            else {
+              console.error("")
+            }
+
           }
           catch (err) {
             error.value = 'Logout failed';
