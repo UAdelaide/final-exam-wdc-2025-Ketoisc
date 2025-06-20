@@ -90,7 +90,10 @@
 
         async function getDogs() {
           try {
-            const res = await fetch('/api/users/ownedDogs', { credentials: 'include' })
+            const res = await fetch('/api/users/ownedDogs', { credentials: 'include' });
+            if (res.ok) {
+              dogs.value = await res.json
+            }
           }
         }
 
