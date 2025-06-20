@@ -123,7 +123,7 @@ app.use('/users', usersRouter);
     }
   })();
 
-  // Route to return books as JSON
+  // Route to return dogs as JSON
   app.get('/', async (req, res) => {
     try {
       const [books] = await db.execute('SELECT * FROM books');
