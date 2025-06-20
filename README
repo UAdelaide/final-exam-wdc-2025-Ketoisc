@@ -15,5 +15,5 @@ To test your computer setup.
 8. If this worked, then congratulations you are ready to start the exam.
 
 
-INSERT INTO Users (username, email, )
+INSERT INTO Users (username, email, password_hash, role)
 VALUES (value1, value2, ...);
