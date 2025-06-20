@@ -87,5 +87,6 @@ router.get('/ownedDogs', async (req, res) => {
     console.error('Couldnt get dogs from database');
     res.status(500).json({ error: 'Failed to get owners dogs from database' });
   }
-})
+});
+
 module.exports = router;
