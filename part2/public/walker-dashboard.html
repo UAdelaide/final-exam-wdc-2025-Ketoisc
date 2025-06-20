@@ -80,7 +80,8 @@
         async function getCurrentUser() {
           try {
             const res = await fetch('/api/users/me', {
-              method: 'GET'
+              method: 'GET',
+              headers: { }
             })
           }
         }
