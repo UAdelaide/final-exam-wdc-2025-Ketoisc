@@ -51,6 +51,7 @@ router.post('/login', async (req, res) => {
 
     // else there is a match, start session
     req.session.user = {
+      user_id: rows[0].user_id,
       username: username,
       role: rows[0].role
     };
