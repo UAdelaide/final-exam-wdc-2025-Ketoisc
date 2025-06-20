@@ -136,7 +136,7 @@ app.use('/users', usersRouter);
   // Route to return all open walk requests as JSON
   app.get('/api/walkrequests/open', async (req, res) => {
     try {
-      const [books] = await db.execute('SELECT req.request_id, dog.name AS dog_name, req.requested_time, req.duration_minutes, req.location, user.username AS owner_username FROM Dogs dog JOIN Users user ON dog.owner_id = user.user_id JOIN ');
+      const [books] = await db.execute('SELECT req.request_id, dog.name AS dog_name, req.requested_time, req.duration_minutes, req.location, user.username AS owner_username FROM Dogs dog JOIN Users user ON dog.owner_id = user.user_id');
       res.json(books);
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch dog list' });
