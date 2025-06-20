@@ -133,7 +133,7 @@ let db;
       if (rows[0].count === 0) {
         await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
-        VALUES (1, 1, 2, 4, 'very good'), (2, 1, 2, 1, 'very bad'), ');
+        VALUES (1, 1, 2, 4, 'very good'), (2, 1, 2, 1, 'very bad');
         `);
       }
     } catch (err) {
