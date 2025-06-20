@@ -50,8 +50,10 @@ app.use('/users', usersRouter);
             password_hash VARCHAR(255) NOT NULL,
             role ENUM('owner', 'walker') NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        );`)
+        );
+        `);
 
+        await db.execute(`
         CREATE TABLE IF NOT EXISTS Dogs (
             dog_id INT AUTO_INCREMENT PRIMARY KEY,
             owner_id INT NOT NULL,
@@ -59,7 +61,9 @@ app.use('/users', usersRouter);
             size ENUM('small', 'medium', 'large') NOT NULL,
             FOREIGN KEY (owner_id) REFERENCES Users(user_id)
         );
+        `);
 
+        await db.execute(`
         CREATE TABLE IF NOT EXISTS WalkRequests (
             request_id INT AUTO_INCREMENT PRIMARY KEY,
             dog_id INT NOT NULL,
