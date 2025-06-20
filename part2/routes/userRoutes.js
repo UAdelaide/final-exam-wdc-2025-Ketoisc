@@ -72,4 +72,5 @@ router.post('/logout', async (req, res) => {
     });
 });
 
+router.get('/userDogs')
 module.exports = router;
