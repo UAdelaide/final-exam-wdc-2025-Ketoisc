@@ -70,7 +70,7 @@ router.post('/login', async (req, res) => {
         return res.status(500).json({ error: 'Failed logout' });
       }
       res.clearCookie('connect.sid');
-      
+      res.json({ message: 'Logged out'})
     })
   }
   catch {
