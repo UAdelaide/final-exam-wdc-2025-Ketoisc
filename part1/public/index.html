@@ -57,11 +57,12 @@
                             this.dogApi = data.message;
                         }
                         else {
-                            this.counter++;
                             this.dogApi = '';
-                            if (this.counter === 16) {
-                                this.counter = 0;
-                            }
+                        }
+                        this.counter++;
+                        if (this.counter === 16) {
+                            this.counter = 0;
+                        }
                         }
                     }
                     catch (error) {
