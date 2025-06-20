@@ -50,7 +50,7 @@ app.use('/users', usersRouter);
             password_hash VARCHAR(255) NOT NULL,
             role ENUM('owner', 'walker') NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        );
+        );`)
 
         CREATE TABLE IF NOT EXISTS Dogs (
             dog_id INT AUTO_INCREMENT PRIMARY KEY,
