@@ -65,10 +65,12 @@ router.post('/login', async (req, res) => {
 router.post('/logout', async (req, res) => {
     req.session.destroy(err => {
       if (err) {
+        console.log("cant destroy cookie");
         return res.status(500).json({ error: 'Failed logout' });
       }
       res.clearCookie('connect.sid');
       res.json({ message: 'Logged out'});
+      
     });
 });
 
