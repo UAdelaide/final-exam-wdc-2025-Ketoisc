@@ -84,7 +84,7 @@
 
             if (!response.ok) {
               console.log("fail");
-              this.error = 'Wrong user details';
+              this.error = 'Wrong user details.';
               return;
             }
 
@@ -99,7 +99,7 @@
             }
             else {
               console.log("no user in database: ", data);
-              this.error = "No matching credentials";
+              this.error = "No matching credentials.";
             }
 
           }
