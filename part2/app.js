@@ -18,7 +18,7 @@ app.use('/api/users', userRoutes);
 // Login
 app.post('/api/users/login', async (req, res) => {
     try {
-      const [books] = await db.execute("SELECT user.username AS walker_username, (SELECT COUNT(*) FROM WalkRatings) AS total_ratings, AVG(rate.rating) AS average_rating, COUNT(DISTINCT rate.request_id) AS completed_walks FROM WalkRatings rate JOIN Users user ON user.user_id = rate.walker_id GROUP BY rate.walker_id");
+      const [role] = await db.execute("SELECT ratings, AVG(rate.rating) AS average_rating, COUNT(DISTINCT rate.request_id) AS completed_walks FROM WalkRatings rate JOIN Users user ON user.user_id = rate.walker_id GROUP BY rate.walker_id");
       res.json(books);
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch dog list' });
