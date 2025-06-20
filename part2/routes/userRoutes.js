@@ -74,7 +74,7 @@ router.post('/logout', async (req, res) => {
 
 router.get('/ownedDogs', async (req, res) => {
   if (!req.session.user) {
-    return res.status.
+    return res.status(401).json()
   }
 })
 module.exports = router;
