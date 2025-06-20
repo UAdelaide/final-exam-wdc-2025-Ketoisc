@@ -15,5 +15,5 @@ To test your computer setup.
 8. If this worked, then congratulations you are ready to start the exam.
 
 
-INSERT INTO Users (column1, column2, ...)
+INSERT INTO Users (username, email, )
 VALUES (value1, value2, ...);
