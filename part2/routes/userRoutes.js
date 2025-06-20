@@ -66,7 +66,7 @@ router.post('/login', async (req, res) => {
 
   try {// query the database, check if the given username and password exist
     req.session.destroy(err => {
-      
+      if (err)
     })
   }
   catch {
