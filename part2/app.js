@@ -14,7 +14,7 @@ const userRoutes = require('./routes/userRoutes');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-
+let db;
 // Login
 app.post('/api/users/login', async (req, res) => {
     try {
