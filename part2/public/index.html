@@ -121,19 +121,19 @@
                 try {
                   // for every dog call the image api
                   const dogPhoto = await fetch('https://dog.ceo/api/breeds/image/random');
-                  if (dogPhoto.ok) { //if successful response, set photo attribute to the URL
+                  if (dogPhoto.ok) { //if successful response, set photo attribute to the image URL
                     const photoURL = await dogPhoto.json();
                     currDog.photo = photoURL.message;
                   }
                   else {
-                    currDog.photo = '';
+                    currDog.photo = ''; //otherwise set empty
                   }
                 }
                 catch (err) {
                   currDog.photo = '';
                 }
               }
-              this.dogs = dogList;
+              this.dogs = dogList; //set dogs array to the edited doglist
             }
           }
           catch (err) {
