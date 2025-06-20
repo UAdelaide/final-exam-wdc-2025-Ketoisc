@@ -41,7 +41,8 @@
       methods: {
         async login() {
           try {
-            this.error = '';
+            this.error = ''; //no error yet when trying to log in
+            // send post request/fetch to access database to see if given login details match
             const response = await fetch('/api/users/login', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
