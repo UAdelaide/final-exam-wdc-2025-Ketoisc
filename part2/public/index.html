@@ -32,7 +32,7 @@
     createApp({
       data() {
         return {
-          message: 'Welcome to the Dog Walking Service!'
+          message: 'Welcome to the Dog Walking Service!',
           username: '',
           password: '',
           error: ''
@@ -41,6 +41,7 @@
       methods: {
         async login() {
           try {
+            this.error = '';
             const response = await fetch('/api/users/login', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
