@@ -98,7 +98,7 @@
           catch (err) {
             error.value = 'Couldnt get dogs';
           }
-          }
+
         }
 
         async function loadWalks() {
@@ -157,6 +157,7 @@
 
         onMounted(() => {
           loadWalks();
+          getDogs();
         });
 
         return {
