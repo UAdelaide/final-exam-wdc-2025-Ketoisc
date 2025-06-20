@@ -14,7 +14,9 @@
     <h1>Click on the button and maybe you will see the dog of the day</h1>
     <div id="area">
         <button @click="buttonCounter"> the button of doom and despair</button>
-        <div v-if 
+        <div v-if="dogImage">
+            <img :src=""
+        </div>
     </div>
 </body>
 </html>
