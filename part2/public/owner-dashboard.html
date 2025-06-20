@@ -89,7 +89,9 @@
         const dogs = ref([]);
 
         async function getDogs() {
-          
+          try {
+            const res = await fetch('/api/users/ownedDogs')
+          }
         }
 
         async function loadWalks() {
