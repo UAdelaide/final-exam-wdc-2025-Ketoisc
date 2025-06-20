@@ -118,7 +118,8 @@
                 try {
                   const dogPhoto = await fetch('https://dog.ceo/api/breeds/image/random');
                   if (dogPhoto.ok) {
-                    const 
+                    const photoURL = await dogPhoto.json();
+                    
                   }
                 }
               }
