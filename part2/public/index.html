@@ -57,12 +57,13 @@
               // redirect to owner dashboard
               window.location.href = '/owner-dashboard.html';
             }
-            else if (data === 'walker') {
+            else if (data === 'walker') { //if the user is found in database and is a walker
               // redirect to walker dashboard
               window.location.href = '/walker-dashboard.html';
             }
             else {
               // doesnt exist in database
+              this.error = ''
             }
 
           }
