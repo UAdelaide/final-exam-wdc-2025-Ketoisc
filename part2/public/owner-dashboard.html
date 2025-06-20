@@ -90,7 +90,7 @@
 
         async function getDogs() {
           try {
-            const res = await fetch('/api/users/ownedDogs')
+            const res = await fetch('/api/users/ownedDogs', { credentials: 'include' })
           }
         }
 
