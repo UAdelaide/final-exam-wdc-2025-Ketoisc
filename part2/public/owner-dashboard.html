@@ -92,7 +92,10 @@
           try {
             const res = await fetch('/api/users/ownedDogs', { credentials: 'include' });
             if (res.ok) {
-              dogs.value = await res.json
+              dogs.value = await res.json();
+            }
+            catch (err) {
+              error.v
             }
           }
         }
