@@ -47,7 +47,7 @@
           <td>{{ dog.size }}</td>
           <td>{{ dog.owner_id }}</td>
           <td>
-            
+            <img v-if="dog.photo" :src="dog.photo">
           </td>
         </tr>
       </tbody>
