@@ -100,10 +100,12 @@ app.use('/users', usersRouter);
       const [rows] = await db.execute('SELECT COUNT(*) AS count FROM books');
       if (rows[0].count === 0) {
         await db.execute(`
-          INSERT INTO books (title, author) VALUES
-          ('1984', 'George Orwell'),
-          ('To Kill a Mockingbird', 'Harper Lee'),
-          ('Brave New World', 'Aldous Huxley')
+        INSERT INTO Users (username, email, password_hash, role)
+        VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner'), ('bobwalker', 'bob@example.com', 'hashed456', 'walker'), ('carol123', 'carol@example.com', 'hashed789', 'owner'), ('brooke3', 'brooke@example.com', 'password123', 'owner'), ('irene45', 'irene@example.com', 'pass123', 'walker');
+        INSERT INTO Dogs (owner_id, name, size)
+        VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'), ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small'), ((SELECT user_id FROM Users WHERE username = 'brooke3'), 'Kai', 'large'), ((SELECT user_id FROM Users WHERE username = 'brooke3'), 'Martin', 'small'), ((SELECT user_id FROM Users WHERE username = 'brooke3'), 'Grace', 'medium');
+        INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+        VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'), ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'), ((SELECT dog_id FROM Dogs WHERE name = 'Kai'), '2025-06-11 09:30:00', 30, 'Happy Ave', 'open'), ((SELECT dog_id FROM Dogs WHERE name = 'Martin'), '2025-06-12 09:30:00', 30, 'Sad Ave', 'accepted'), ((SELECT dog_id FROM Dogs WHERE name = 'Kai'), '2025-06-16 09:30:00', 30, 'Avenue Ave', 'open');
         `);
       }
     } catch (err) {
