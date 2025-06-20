@@ -63,15 +63,13 @@ router.post('/login', async (req, res) => {
 
 // POST logout
 router.post('/login', async (req, res) => {
-
-  try {// query the database, check if the given username and password exist
     req.session.destroy(err => {
       if (err) {
         return res.status(500).json({ error: 'Failed logout' });
       }
       res.clearCookie('connect.sid');
-      res.json({ message: 'Logged out'})
-    })
+      res.json({ message: 'Logged out'});
+    });
   }
   catch {
 
