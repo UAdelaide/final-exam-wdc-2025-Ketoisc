@@ -146,7 +146,7 @@ app.use('/users', usersRouter);
 // Route to return summary of each walker as JSON
   app.get('/api/walkers/summary', async (req, res) => {
     try {
-      const [books] = await db.execute("SELECT (SELECT COUNT(*)");
+      const [books] = await db.execute("SELECT user.username, (SELECT COUNT(*)");
       res.json(books);
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch dog list' });
