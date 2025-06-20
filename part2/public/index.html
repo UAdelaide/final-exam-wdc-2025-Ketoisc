@@ -64,6 +64,10 @@
           error: ''
         };
       },
+      mounted() {
+          this.getDogList();
+        },
+
       methods: {
         async login() {
           try {
@@ -113,9 +117,6 @@
           catch (err) {
             this.error = err.message;
           }
-        },
-        mounted() {
-          this.getDogList();
         }
       }
     }).mount('#app');
