@@ -19,7 +19,7 @@ app.use('/api/users', userRoutes);
 app.post('/api/users/login', async (req, res) => {
     try {
       const { username, password } = req.body;
-      const [role] = await db.execute("SELECT role FROM Users WHERE ");
+      const [role] = await db.execute("SELECT role FROM Users WHERE username = ? AND password");
       res.json(books);
     } catch (err) {
       res.status(500).json({ error: 'Failed to fetch user details' });
