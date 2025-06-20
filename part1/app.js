@@ -41,11 +41,6 @@ app.use('/users', usersRouter);
 
       // Create a table if it doesn't exist
       await db.execute(`
-        CREATE TABLE IF NOT EXISTS books (
-          id INT AUTO_INCREMENT PRIMARY KEY,
-          title VARCHAR(255),
-          author VARCHAR(255)
-        )
         CREATE TABLE IF NOT EXISTS Users (
             user_id INT AUTO_INCREMENT PRIMARY KEY,
             username VARCHAR(50) UNIQUE NOT NULL,
@@ -74,7 +69,7 @@ app.use('/users', usersRouter);
             FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
         );
 
-        CREATE TABLE WalkApplications (
+        CREATE TABLE IF NOT EXISTS WalkApplications (
             application_id INT AUTO_INCREMENT PRIMARY KEY,
             request_id INT NOT NULL,
             walker_id INT NOT NULL,
@@ -85,7 +80,7 @@ app.use('/users', usersRouter);
             CONSTRAINT unique_application UNIQUE (request_id, walker_id)
         );
 
-        CREATE TABLE WalkRatings (
+        CREATE TABLE IF NOT EXISTS WalkRatings (
             rating_id INT AUTO_INCREMENT PRIMARY KEY,
             request_id INT NOT NULL,
             walker_id INT NOT NULL,
