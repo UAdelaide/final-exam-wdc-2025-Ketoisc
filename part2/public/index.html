@@ -16,7 +16,7 @@
     <form @submit.prevent="login">
       <div class="mb-3">
         <!-- login fields -->
-        <div v-if="error" class="alert alert-danger">{{ error }}</label>
+        <div v-if="error" class="alert alert-danger" role="alert">{{ error }}</div>
         <label for="username" class="form-label">Username</label>
         <input type="text" v-model="username" class="form-control" id="username" required>
       </div>
