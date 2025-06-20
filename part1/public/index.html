@@ -37,17 +37,16 @@
             color: red;
             font-weight: bold;
             background: linear-gradient(45deg, pink, cyan, yellow);
-            animation: spin 2s linear infinite;
         }
     </style>
 </head>
 
 <body>
     <h1>Click on the button and maybe you will see the dog of the day</h1>
-    <div id="area">
+    <div id="area" class="spin">
         <button @click="buttonCounter"> the button of doom and despair</button>
         <div v-if="dogApi">
-            <img :src="dogApi" alt="maybe a dog will appear here">
+            <img :src="dogApi" alt="maybe a dog will appear here" class="spin">
         </div>
     </div>
 
