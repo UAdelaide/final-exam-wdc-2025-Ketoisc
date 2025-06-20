@@ -15,6 +15,9 @@ const session = require('epxress-session');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
+app.use(session({
+    secret: 'skibidi'
+}))
 let db;
 
 
