@@ -80,7 +80,7 @@ router.get('/ownedDogs', async (req, res) => {
   try {
     const username = req.session.user.username;
 
-    const [rows] = await db.query(`SELECT `)
+    const [rows] = await db.query(`SELECT dog.name FROM Dogs dog`)
   }
 })
 module.exports = router;
