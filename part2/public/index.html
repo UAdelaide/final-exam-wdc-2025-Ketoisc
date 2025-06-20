@@ -14,10 +14,9 @@
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
     <form @submit.prevent="">
       <div class="mb-3">
-
+        <label for="username">Username</label>
+        <input type="text" v-model="username" id="username" required>
       </div>
-      <label for="username">Username</label>
-      <input type="text" v-model="username" id="username" required>
       <label for="password">Password</label>
       <input type="password" v-model="password" id="password" required>
       <button type="submit">Log In</button>
