@@ -33,7 +33,8 @@
                     try {
                         if (counter == 8) {
                             const response = await fetch('https://dog.ceo/api/breeds/image/random');
-                            const data = await response.
+                            const data = await response.json();
+                            this.dogApi = data.message;
                         }
                     }
                 }
