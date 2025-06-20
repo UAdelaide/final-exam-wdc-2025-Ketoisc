@@ -81,8 +81,9 @@
           try {
             const res = await fetch('/api/users/me', {
               method: 'GET',
-              headers: { }
-            })
+              credentials: 'include'
+            });
+            if 
           }
         }
 
