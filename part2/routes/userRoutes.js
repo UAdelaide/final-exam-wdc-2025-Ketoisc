@@ -74,7 +74,11 @@ router.post('/logout', async (req, res) => {
 
 router.get('/ownedDogs', async (req, res) => {
   if (!req.session.user) {
-    return res.status(401).json()
+    return res.status(401).json({ error: 'No login cookie' });
+  }
+
+  try {
+    
   }
 })
 module.exports = router;
