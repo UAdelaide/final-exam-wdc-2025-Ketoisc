@@ -100,13 +100,11 @@
         async function applyToWalk(requestId) {
           var user_id = getCurrentUser();
           if (user_id != null) {
-            
-          }
-          try {
+            try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ walker_id: user })
+              body: JSON.stringify({ walker_id: user_id })
             });
             const result = await res.json();
 
@@ -114,10 +112,13 @@
             message.value = result.message;
             error.value = '';
             await loadWalkRequests();
-          } catch (err) {
-            error.value = err.message;
-            message.value = '';
+
+            } catch (err) {
+              error.value = err.message;
+              message.value = '';
+            }
           }
+
         }
 
         onMounted(() => {
