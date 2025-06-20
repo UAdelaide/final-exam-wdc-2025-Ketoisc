@@ -20,7 +20,7 @@
       <label for="password" class="form-label">Password</label>
       <input type="password" v-model="password" class="form-control" id="password" required>
       <br>
-      <button width="1px" type="submit" class="btn btn-primary w-100">Log In</button>
+      <button width="1px" type="submit" class="btn btn-primary">Log In</button>
     </form>
 
     <!-- <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
@@ -41,7 +41,7 @@
             const response = await fetch('https://dog.ceo/api/breeds/image/random');
             const data = await response.json();
             this.dogApi = data.message;
-          
+
           }
           catch {
 
