@@ -36,7 +36,7 @@ app.use('/users', usersRouter);
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'dogwalks'
+        database: 'DogWalkService'
       });
 
       // Create a table if it doesn't exist
