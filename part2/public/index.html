@@ -116,7 +116,10 @@
 
               for (const currDog of dogList) {
                 try {
-                  const dogPhoto = await fetch('https://dog.ceo/api/breeds/image/random')
+                  const dogPhoto = await fetch('https://dog.ceo/api/breeds/image/random');
+                  if (dogPhoto.ok) {
+                    const 
+                  }
                 }
               }
             }
