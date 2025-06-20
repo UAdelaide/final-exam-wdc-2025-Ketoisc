@@ -133,7 +133,7 @@ let db;
       if (rows[0].count === 0) {
         await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
-        VALUES (1, 1, 2, 4, 'very good'), ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'), ((SELECT dog_id FROM Dogs WHERE name = 'Kai'), '2025-06-11 09:30:00', 30, 'Happy Ave', 'open'), ((SELECT dog_id FROM Dogs WHERE name = 'Martin'), '2025-06-12 09:30:00', 30, 'Sad Ave', 'accepted'), ((SELECT dog_id FROM Dogs WHERE name = 'Kai'), '2025-06-16 09:30:00', 30, 'Avenue Ave', 'open');
+        VALUES (1, 1, 2, 4, 'very good'), (2, 1, 2, 4, 'very good'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'), ((SELECT dog_id FROM Dogs WHERE name = 'Kai'), '2025-06-11 09:30:00', 30, 'Happy Ave', 'open'), ((SELECT dog_id FROM Dogs WHERE name = 'Martin'), '2025-06-12 09:30:00', 30, 'Sad Ave', 'accepted'), ((SELECT dog_id FROM Dogs WHERE name = 'Kai'), '2025-06-16 09:30:00', 30, 'Avenue Ave', 'open');
         `);
       }
     } catch (err) {
